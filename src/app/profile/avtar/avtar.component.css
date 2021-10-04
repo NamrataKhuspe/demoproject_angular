@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+  }
+  html, body, #wrapper {
+    height: 50%;
+    width: 50%;
+    border-style: groove;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 0%;
+    margin-bottom: 20%;
+    padding: 2%;
+  }

@@ -1,0 +1,79 @@
+<!-- main app container -->
+<div class="card m-3" id="wrapper">
+  <div class="card-body" class="imp">
+    <h3 class="card-header" style="align-items: center;margin-left: 40%;margin-right: 40%;"> Login Form </h3>
+    <hr>
+    <br>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="cen">
+      <div class="form-row">
+        <!-- <div class="form-group col-5">
+          <label>Title  </label>
+          <select  style="width: 50%;" formControlName="title" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.title.errors }">
+            <option value=""></option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Miss">Miss</option>
+            <option value="Ms">Ms</option>
+          </select>
+          <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+            <div *ngIf="f.title.errors.required" style="color: red;">Title is required</div>
+          </div>
+        </div> -->
+        <br>
+        <div class="form-group col-5">
+          <label>Email</label>
+          <input type="text" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required" style="color: red;">Email is required</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col">
+          <label>Password</label>
+          <input type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <div *ngIf="isPass" style="color: red;">{{isMessage}}</div>
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required" style="color: red;">Password is required</div>
+            <div *ngIf="f.password.errors.minlength" style="color: red;">Password must be at least 6 characters</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <div class="buttons">
+        <div class="text-center">
+          <div class="action_btn">
+            <button class="btn btn-primary mr-1" style="float: left;">Login</button>
+            <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            <br>
+            <button class="btn btn-secondary" style="background-color: #008CBA;">Register</button>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="buttons text-center">
+
+        <div class="action_btn">
+          <div style="position: relative;
+           left: 135px;">
+            <button class="btn btn-primary mr-1 action_btn">Login</button>
+            <button class="btn btn-secondary action_btn" type="reset" (click)="onReset()"
+              style="margin-left: 2px;">Cancel</button>
+          </div>
+        </div>
+
+      </div>
+
+    </form>
+    <button class="btn btn-secondary" style="background-color: #008CBA;" (click)="onRegister()">Register</button>
+    <p id="saved"></p>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

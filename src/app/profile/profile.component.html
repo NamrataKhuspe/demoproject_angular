@@ -1,0 +1,35 @@
+<div style="margin-top: 5px;">
+    <div>
+
+        <div class="row" style="border: 1px solid black;background-color: white;height: 500px">
+            <div class="col-md-4" style="height: 300px;float: left;">
+                <!-- <img src="../../assets/img/avtar.png" alt="Avatar" class="avatar"> -->
+                <img [src]="img" alt="Avatar" class="avatar" />
+            </div>
+
+            <div class="col-md-8" style="margin-top: 45px;">
+                <!-- <ul class="list-inline">
+                <li><a routerLink='/profile/personal'>Personal Info</a></li>
+                <li><a routerLink ='/profile/avtar'>Avtar</a></li>
+                <li><a routerLink='/profile/password'>Chnage Password</a></li>
+            
+              </ul> -->
+                <div id="wrapper">
+                    <h3 class="card-header" style="margin-right: 40%;margin-left: 40%;"> My Profile </h3>
+                    <br>
+                    <hr>
+                    <br>
+                    <nav mat-tab-nav-bar>
+                        <a mat-tab-link *ngFor="let link of navLinks" [routerLink]="link.link" routerLinkActive
+                            #rla="routerLinkActive" [active]="rla.isActive">
+                            {{link.label}}
+                        </a>
+                    </nav>
+                </div>
+            </div>
+            <div>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
+</div>

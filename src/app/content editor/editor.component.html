@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-sm-10" style="height: 50%">
+        <label>Content</label>
+        <label style="color:red ">*</label>
+        <app-tinyeditor [elementId]="'my-editor'" name="editor" ngDefaultControl [(ngModel)]="block.texteditor" [class.active]="disableFields1" (onEditorContentChange)="keyupHandler($event)">
+        </app-tinyeditor>
+    </div>
+</div>
