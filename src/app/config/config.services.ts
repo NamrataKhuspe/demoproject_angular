@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment'
 
 export class configService {
     // configUrl = environment.local_bakendurl;
-    configUrl = "http://127.0.0.1:8080/"
+    configUrl = "http://ngservice.herokuapp.com/"
     constructor(private httpclient: HttpClient) {
     }
     getConfig(url: any) {
